@@ -24,4 +24,5 @@
           name="Users"
           parent="library_menu_root"
           action="lib_users_action"/>
+    
 </odoo>
