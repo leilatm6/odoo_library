@@ -1,0 +1,40 @@
+<odoo>
+    <record id="book_borrow_view_list" model="ir.ui.view">
+        <field name="name">book.borrow.list</field>
+        <field name="model">book.borrow</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="book_id"/>
+                <field name="borrower_id"/>
+                <field name="state"/>
+                <field name="borrow_date"/>
+                <field name="return_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="book_borrow_view_form" model="ir.ui.view">
+        <field name="name">book.borrow.form</field>
+        <field name="model">book.borrow</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="borrow_book" type="object" string="Borrow"
+                            invisible="state != 'draft'"/>
+                    <button name="return_book" type="object" string="Return"
+                            invisible="state != 'borrowed'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,borrowed,returned"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="book_id"/>
+                        <field name="borrower_id"/>
+                        <field name="borrow_date"/>
+                        <field name="return_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

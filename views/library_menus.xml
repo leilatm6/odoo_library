@@ -1,0 +1,21 @@
+<odoo>
+    <menuitem id="library_menu_root" name="Library"/>
+
+    <menuitem id="library_first_level_menu"
+              name="Books"
+              parent="library_menu_root"/>
+
+    <menuitem id="library_model_menu_action"
+              name="All Books"
+              parent="library_first_level_menu"
+              action="book_property_action"/>
+
+    <menuitem id="library_settings_menu"
+              name="Settings"
+              parent="library_menu_root"/>
+
+    <menuitem id="library_type_model_menu_action"
+              name="Book Types"
+              parent="library_settings_menu"
+              action="book_property_type_action"/>
+</odoo>
