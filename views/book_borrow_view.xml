@@ -26,6 +26,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+<<<<<<< HEAD
                     <button name="borrow_book" type="object" string="Borrow"
                             invisible="state != 'new'"/>
                     <button name="return_book" type="object" string="Return"
@@ -34,6 +35,22 @@
                            statusbar_visible="borrowed,returned"
                            invisible="state == 'new'"/>
                 </header>
+=======
+    <button name="borrow_book"
+            type="object"
+            string="Borrow"
+            invisible="state == 'borrowed' or state == 'returned'"/>
+
+    <button name="return_book"
+            type="object"
+            string="Return"
+            invisible="state != 'borrowed'"/>
+
+    <field name="state"
+           widget="statusbar"
+           statusbar_visible="borrowed,returned"/>
+</header>
+>>>>>>> upstream/main
                 <sheet>
                     <group>
                         <field name="book_id"/>

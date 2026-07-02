@@ -10,10 +10,14 @@
               parent="library_first_level_menu"
               action="book_property_action"/>
 
+<<<<<<< HEAD
     <menuitem id="library_borrow_menu_action"
               name="Borrow Records"
               parent="library_first_level_menu"
               action="book_borrow_action"/>
+=======
+   
+>>>>>>> upstream/main
 
     <menuitem id="library_settings_menu"
               name="Settings"
@@ -23,4 +27,8 @@
               name="Book Types"
               parent="library_settings_menu"
               action="book_property_type_action"/>
+    <menuitem id="library_users_menu"
+          name="Users"
+          parent="library_menu_root"
+          action="lib_users_action"/>
 </odoo>
