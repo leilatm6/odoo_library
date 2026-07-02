@@ -30,9 +30,13 @@
                             <field name="borrowed_book_ids">
                                 <list>
                                     <field name="book_id"/>
-                                    <field name="state"/>
+                                    <field name="state"/>                                   
                                     <field name="borrow_date"/>
+                                    <field name="due_date"/>
                                     <field name="return_date"/>
+                                    <field name="has_fine" column_invisible="1"/>
+                                    <button name="action_view_fine" type="object" string="View Fine"
+                                            invisible="not has_fine"/>
                                 </list>
                             </field>
                         </page>

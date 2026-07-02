@@ -1,0 +1,23 @@
+<odoo>
+    <record id="library_fine_view_form" model="ir.ui.view">
+        <field name="name">library.fine.form</field>
+        <field name="model">library.fine</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_create_invoice" type="object"
+                            string="Create Invoice" class="btn-primary"
+                            invisible="invoice_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="book_borrow_id"/>
+                        <field name="user_id"/>
+                        <field name="fine_amount"/>
+                        <field name="invoice_id" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

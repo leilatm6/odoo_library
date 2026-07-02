@@ -60,15 +60,16 @@
                             </group>
                         </page>
                         <page string="Borrowing">
-    <field name="current_borrow_ids">
-        <list>
-            <field name="borrower_id"/>
-            <field name="state"/>
-            <field name="borrow_date"/>
-            <field name="return_date"/>
-        </list>
-    </field>
-</page>
+                            <field name="current_borrow_ids">
+                                <list>
+                                    <field name="borrower_id"/>
+                                    <field name="state"/>
+                                    <field name="borrow_date"/>
+                                    <field name="return_date"/>
+                                    <field name="due_date"/>    
+                                </list>
+                            </field>
+                        </page>
   
                     </notebook> 
                 </sheet>

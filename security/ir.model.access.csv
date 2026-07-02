@@ -2,3 +2,4 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_book_property,access_book_property,model_book_property,base.group_user,1,1,1,1
 access_book_property_type,access_book_property_type,model_book_property_type,base.group_user,1,1,1,1
 access_book_borrow,access_book_borrow,model_book_borrow,base.group_user,1,1,1,1
+access_library_fine,access_library_fine,model_library_fine,base.group_user,1,1,1,1

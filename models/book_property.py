@@ -20,7 +20,7 @@ class BookProperty(models.Model):
     'book.borrow',
     'book_id',
     string='Current Borrowers',
-    
+    domain=[('state', '=', 'borrowed')],
 )
 
 
@@ -34,7 +34,7 @@ class BookProperty(models.Model):
     #     self.ensure_one()
     #     return {
     #         'type': 'ir.actions.act_window',
-    #         'name': 'Borrow Book',
+    #         'name': 'Borrow Book',cd
     #         'res_model': 'book.borrow',
     #         'view_mode': 'form',
     #         'target': 'new',
