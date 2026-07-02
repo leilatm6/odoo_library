@@ -18,4 +18,5 @@
               name="Book Types"
               parent="library_settings_menu"
               action="book_property_type_action"/>
+    
 </odoo>

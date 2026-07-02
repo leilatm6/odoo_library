@@ -13,7 +13,8 @@
                 <field name="title"/>
                 <field name="author"/>
                 <field name="isbn"/>
-                <field name="copies"/>
+                <field name="available_copies"/>
+                
             </list>
         </field>
     </record> 
@@ -23,12 +24,21 @@
         <field name="model">book.property</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <!-- <button name="action_borrow"
+                        type="object"
+                        string="Borrow"
+                        invisible="available_copies &lt;= 0"/> -->
+
+                    <field name="available_copies"/>
+                    <div class="alert alert-warning" role="alert"
+                        invisible="available_copies &gt; 0" >
+                        <strong>Warning!</strong> No copies available for borrowing.
+                        </div>
+                        
+                    
+                </header>   
                 <sheet>
-                    <header>
-                        <!--<button name="sell_property" type="object" string="Sell" invisible="state in ('sold','canceled')"/>
-                        <button name="cancel_property" type="object" string="Cancel" invisible="state in ('sold','canceled')"/>
-                        <field name="state" widget="statusbar" statusbar_visible="new,offer_accepted,sold,canceled"/>-->
-                    </header>   
                     <h1>
                         <field name="title"/>
                     </h1>
@@ -38,6 +48,8 @@
                         <field name="author"/>
                         <field name="isbn"/>
                         <field name="copies"/>
+                        <field name="available_copies"/>
+                        
                         
                     </group>
                     <notebook>
@@ -48,8 +60,16 @@
                             </group>
                         </page>
                         <page string="Borrowing">
-                            <field name="borrow_ids" mode="list,form"/>
-                                </page>
+    <field name="current_borrow_ids">
+        <list>
+            <field name="borrower_id"/>
+            <field name="state"/>
+            <field name="borrow_date"/>
+            <field name="return_date"/>
+        </list>
+    </field>
+</page>
+  
                     </notebook> 
                 </sheet>
             </form>
@@ -68,7 +88,7 @@
                     <field name="title"/>
                     <field name="author"/>
                     <field name="isbn"/>
-                    <field name="copies"/>
+                    <field name="available_copies"/>
                     <!--<field name="tag_ids" widget="many2many_tags"/>
                     <t t-if ="record.state.raw_value == 'sold'">
                     <div>
