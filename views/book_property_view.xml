@@ -48,19 +48,8 @@
                             </group>
                         </page>
                         <page string="Borrowing">
-    <field name="borrow_ids" readonly="1"/>
-</page>
-
-                       <!-- <page string="Other Info">
-                            <group>
-                                <field name="buyer_id"/>
-                                <field name="salesperson_id"/>
-                            </group>
-                        </page>
-                        <page string="Borrowing">
-                            <field name="offer_ids" readonly = "state in ('sold','canceled', 'offer_accepted')"/>
-
-                        </page>-->
+                            <field name="borrow_ids" mode="list,form"/>
+                                </page>
                     </notebook> 
                 </sheet>
             </form>
