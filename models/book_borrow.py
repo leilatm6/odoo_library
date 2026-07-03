@@ -46,11 +46,11 @@ class BookBorrow(models.Model):
             if record.book_id.available_copies <= 0:
                 raise UserError("There are no available copies of this book.")
 
-            if record.borrower_id.borrowed_book_ids.filtered(lambda b: b.state == 'borrowed'):
+            if record.borrower_id.available_borrows <= 0:
                 raise UserError(
-                    "This borrower already has a borrowed book. Please return it first."
+                    f"{record.borrower_id.name} has reached the maximum of "
+                    f"{record.borrower_id.max_books} borrowed books."
                 )
-            
 
             if not record.borrow_date:
                 record.borrow_date = fields.Date.today()

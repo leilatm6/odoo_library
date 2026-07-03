@@ -70,7 +70,18 @@
                                 </list>
                             </field>
                         </page>
-  
+                        <page string="Photos">
+    <field name="photo_ids">
+        <kanban>
+            <templates>
+                <t t-name="card">
+                    <field name="photo" widget="image"/>
+                    <div><field name="name"/></div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</page>
                     </notebook> 
                 </sheet>
             </form>

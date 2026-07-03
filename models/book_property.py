@@ -22,7 +22,7 @@ class BookProperty(models.Model):
     string='Current Borrowers',
     domain=[('state', '=', 'borrowed')],
 )
-
+    photo_ids = fields.One2many('book.photo', 'book_id', string='Photos')
 
     @api.depends("copies", "borrow_ids.state")
     def _compute_available_copies(self):
